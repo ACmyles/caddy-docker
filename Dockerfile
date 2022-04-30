@@ -1,9 +1,9 @@
 FROM caddy:2.5.0-builder-alpine AS builder
 
 RUN xcaddy build \
-    --with https://github.com/greenpau/caddy-security \
-    --with https://github.com/caddy-dns/cloudflare \
-    --with https://github.com/kirsch33/realip
+    --with github.com/greenpau/caddy-security \
+    --with github.com/caddy-dns/cloudflare \
+    --with github.com/kirsch33/realip
 
 FROM caddy:2.5.0-alpine
 
