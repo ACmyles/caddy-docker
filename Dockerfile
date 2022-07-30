@@ -1,4 +1,4 @@
-FROM caddy:2.5.0-builder-alpine AS builder
+FROM caddy:2.5.2-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/greenpau/caddy-security \
@@ -6,6 +6,6 @@ RUN xcaddy build \
     --with github.com/kirsch33/realip \
     --with github.com/caddyserver/transform-encoder
 
-FROM caddy:2.5.0-alpine
+FROM caddy:2.5.2-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
